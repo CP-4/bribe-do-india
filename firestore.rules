@@ -1,0 +1,38 @@
+// Prototype rules for bribe.do. Review and harden before public launch.
+// Public report documents contain no phone number, email, or free-form identity data.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function validReport() {
+      return request.resource.data.keys().hasOnly([
+        'department', 'city', 'service', 'amount', 'createdAt', 'status', 'uid'
+      ])
+      && request.resource.data.department is string
+      && request.resource.data.department.size() > 0
+      && request.resource.data.department.size() <= 80
+      && request.resource.data.city is string
+      && request.resource.data.city.size() > 1
+      && request.resource.data.city.size() <= 80
+      && request.resource.data.service is string
+      && request.resource.data.service.size() > 1
+      && request.resource.data.service.size() <= 140
+      && request.resource.data.amount is number
+      && request.resource.data.amount >= 0
+      && request.resource.data.amount <= 100000000
+      && request.resource.data.status == 'pending'
+      && request.resource.data.uid == request.auth.uid
+      && request.resource.data.createdAt == request.time;
+    }
+
+    match /reports/{reportId} {
+      allow read: if true;
+      allow create: if signedIn() && validReport();
+      allow update, delete: if false;
+    }
+
+    match /users/{userId} {
+      allow read, write: if signedIn() && request.auth.uid == userId;
+    }
+  }
+}

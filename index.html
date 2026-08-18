@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111311" />
+    <title>bribe.do — make the invisible visible</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- THESIS: a civic signal desk that turns private bribe demands into a public pattern. OWN-WORLD: graphite, acid lime, cream paper, compact data cards, and stamped signal markers. STORY: report without an account, see the pattern, understand the limits, and act. FIRST VIEWPORT: anchored nav, oversized reporting prompt, sample metrics, and the first report stream. FORM: dense public-data dashboard, assigned surface index 6, direction seed c2bdad66. FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md -->
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="bribe.do home"><span class="brand-mark">/</span>bribe<span class="brand-dot">.do</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a class="active" href="#signals">Signals</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="topbar-actions"><button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false"><span class="theme-sun">☼</span><span class="theme-moon">◐</span></button><button class="button button-lime open-report">Report a bribe <span>↗</span></button></div>
+    </header>
+
+    <main id="top">
+      <section class="hero shell">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse"></span> A public record of private demands</div>
+          <h1>Make the<br /><em>invisible</em> visible.</h1>
+          <p class="hero-lede">A place to anonymously report bribes demanded in government offices across India — and see the patterns emerge.</p>
+          <div class="hero-actions">
+            <button class="button button-lime open-report">Report a bribe <span>↗</span></button>
+            <a class="text-link" href="#signals">Explore the signals <span>↓</span></a>
+          </div>
+          <p class="micro-note"><span class="lock">⌁</span> No login. No name. No phone number.</p>
+        </div>
+        <div class="hero-side">
+          <div class="side-note"><span class="note-number">01</span><span>Every report helps someone<br />walk in a little more prepared.</span></div>
+          <div class="signal-stamp">PUBLIC<br /><strong>GOOD</strong><span>EST. 2026</span></div>
+        </div>
+      </section>
+
+      <section class="metrics shell" id="signals">
+        <div class="section-heading"><div><span class="kicker">THE SIGNAL BOARD</span><h2>What people are reporting</h2></div><span class="fresh">Updated moments ago <i></i></span></div>
+        <div class="metric-grid">
+          <article class="metric-card metric-dark"><span class="metric-label">TOTAL REPORTS</span><strong>616</strong><span class="metric-foot">across 251 cities</span><span class="card-index">01</span></article>
+          <article class="metric-card metric-lime"><span class="metric-label">REPORTED THIS WEEK</span><strong>48</strong><span class="metric-foot">+12% from last week</span><span class="trend">↗</span><span class="card-index">02</span></article>
+          <article class="metric-card metric-paper"><span class="metric-label">MOST REPORTED</span><strong>Police</strong><span class="metric-foot">followed by Municipal Corp.</span><span class="card-index">03</span></article>
+        </div>
+      </section>
+
+      <section class="dashboard shell">
+        <div class="panel map-panel">
+          <div class="panel-top"><div><span class="kicker">01 / WHERE</span><h3>Signals by city</h3></div><button class="filter-button">This month <span>⌄</span></button></div>
+          <div class="map-stage" aria-label="Signal map of India">
+            <img class="map-outline" src="https://upload.wikimedia.org/wikipedia/commons/b/b4/India_outline.svg" alt="Outline map of India" />
+            <div id="city-signals" aria-live="polite"></div>
+            <div class="map-legend"><span><i class="legend-dot hot"></i>high signal</span><span><i class="legend-dot cool"></i>emerging</span></div>
+          </div>
+          <p class="disclaimer">Signals reflect reports submitted here, not a measure of corruption. More reports can also mean more people are speaking up. <a href="https://commons.wikimedia.org/wiki/File:India_outline.svg" target="_blank" rel="noreferrer">Map: Wikimedia Commons</a>.</p>
+        </div>
+        <div class="panel reports-panel">
+          <div class="panel-top"><div><span class="kicker">02 / WHAT</span><h3>Latest reports</h3></div><button class="filter-button">All departments <span>⌄</span></button></div>
+          <div class="report-list">
+            <article class="report-row"><div class="report-icon">₹</div><div><strong>Driving licence renewal</strong><span>RTO · Pune, Maharashtra</span></div><b>₹2,000</b><small>2h ago</small></article>
+            <article class="report-row"><div class="report-icon">▦</div><div><strong>Property registration</strong><span>Sub-Registrar · Bengaluru, Karnataka</span></div><b>₹35,000</b><small>5h ago</small></article>
+            <article class="report-row"><div class="report-icon">♧</div><div><strong>Police verification</strong><span>Police · Kochi, Kerala</span></div><b>₹500</b><small>8h ago</small></article>
+            <article class="report-row"><div class="report-icon">✚</div><div><strong>Building plan approval</strong><span>Municipal Corp. · Thane, Maharashtra</span></div><b>₹10,000</b><small>1d ago</small></article>
+          </div>
+          <a class="panel-link" href="#signals">See all reports <span>→</span></a>
+        </div>
+      </section>
+
+      <section class="how shell" id="how-it-works">
+        <div class="how-intro"><span class="kicker">A SMALL ACT WITH A LONG SHADOW</span><h2>One report.<br /><em>A clearer picture.</em></h2><p>Reporting takes less than two minutes. Your experience becomes part of a record that helps others ask better questions, spot outliers, and know they are not the only one.</p></div>
+        <div class="steps"><div class="step"><span>01</span><h3>Tell us what happened</h3><p>Department, city, service, amount. No personal details.</p></div><div class="step"><span>02</span><h3>We remove the noise</h3><p>Reports are reviewed for clarity and stripped of identifying details.</p></div><div class="step"><span>03</span><h3>Everyone sees the signal</h3><p>Browse patterns by place and department. Come prepared.</p></div></div>
+      </section>
+
+      <section class="footer-cta shell" id="about"><div><span class="kicker">YOUR EXPERIENCE COUNTS</span><h2>Were you asked<br />for a little extra?</h2></div><button class="button button-dark open-report">Report it anonymously <span>↗</span></button></section>
+    </main>
+
+    <footer class="footer shell"><span class="brand small"><span class="brand-mark">/</span>bribe<span class="brand-dot">.do</span></span><span>Built for a more honest everyday.</span><span>Data is a signal, not a verdict.</span></footer>
+
+    <div class="modal-backdrop" hidden><div class="report-modal" role="dialog" aria-modal="true" aria-labelledby="report-title"><button class="close-modal" aria-label="Close">×</button><span class="kicker">VERIFIED REPORT / 01</span><h2 id="report-title">First, verify your mobile.</h2><p class="modal-copy">A one-time code keeps the board useful. Your phone number is used only for verification and is never published.</p><section class="auth-gate" id="phone-gate"><label>Mobile number<input id="phone-number" type="tel" autocomplete="tel" placeholder="+91 98765 43210" required /></label><div id="recaptcha-container"></div><button class="button button-lime" id="send-code" type="button">Send OTP <span>→</span></button><p class="auth-status" id="auth-status" aria-live="polite"></p></section><section class="otp-step" id="otp-step" hidden><label>6-digit verification code<input id="otp-code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="123456" /></label><button class="button button-lime" id="verify-code" type="button">Verify mobile <span>✓</span></button></section><form id="report-form" hidden><span class="kicker form-kicker">VERIFIED / 02</span><label>Which department?<select id="report-department" required><option value="">Choose a department</option><option>Police</option><option>Municipal Corporation</option><option>RTO / Transport</option><option>Revenue / Land</option><option>Other</option></select></label><div class="form-row"><label>City<input id="report-city" required placeholder="e.g. Pune" /></label><label>Amount (₹)<input id="report-amount" required type="number" min="0" placeholder="e.g. 2000" /></label></div><label>What was the service?<input id="report-service" required placeholder="e.g. Driving licence renewal" /></label><label class="check"><input type="checkbox" required /> I confirm this is a first-hand account and contains no private personal information.</label><button class="button button-lime" type="submit">Submit anonymous report <span>↗</span></button></form><div class="success-state" hidden><div class="success-mark">✓</div><h3>Thank you for adding a signal.</h3><p>Your report has been received for review. You can close this window.</p></div></div></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
